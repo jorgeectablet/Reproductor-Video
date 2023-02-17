@@ -55,10 +55,40 @@ startButton.addEventListener("click", () => { // SE EJECUTA AL DARLE AL PLAY
 
 	for (let i = 0; i < datosPlaylist.length; i++) {
 		if (!itemplaylist.innerHTML.includes(datosPlaylist[i])) {
-		  itemplaylist.innerHTML += ` 🎧 Cancion en posicion ${i}: ${datosPlaylist[i]} 🎧 `;
+		  const listItem = document.createElement("li");
+		  const songText = document.createTextNode(`🎧 Cancion en posición ${i}: ${datosPlaylist[i]} 🎧`);
+		  const playButton = document.createElement("button");
+		  const deleteButton = document.createElement("button");
+	  
+		  playButton.innerHTML = "Reproducir";
+		  deleteButton.innerHTML = "Eliminar";
+
+		  playButton.classList.add("btn", "btn-primary", "m-2");
+		  deleteButton.classList.add("btn", "btn-primary", "m-2");
+	  
+		  listItem.appendChild(songText);
+		  listItem.appendChild(playButton);
+		  listItem.appendChild(deleteButton);
+	  
+		  itemplaylist.appendChild(listItem);
+
+		  playButton.addEventListener("click", (event) => {
+			const listItem = event.target.closest("li");
+			const fileIndex = (Array.from(listItem.parentNode.children).indexOf(listItem))-1;
+			files = videoFiles.files;
+			const songUrl = URL.createObjectURL(files[fileIndex]);
+			videoPlayer.setAttribute("src", songUrl);
+			videoPlayer.play();
+		  });
+
+		  deleteButton.addEventListener("click", (event) => {
+			const listItem = event.target.parentNode;
+			itemplaylist.removeChild(listItem);
+		  })
 		}
-	  }
+	  } 
 });
+
 
 anterior.addEventListener("click", () => {
 	contador--;
@@ -92,11 +122,6 @@ random.addEventListener("click", () => {
 		videoPlayer.src = URL.createObjectURL(videoAleatorio);
 		videoPlayer.load();
 		videoPlayer.play();
-
-		for (let i = 0; i < files.length; i++) {
-			datosPlaylist.push(files[i].name);
-			document.getElementById("itemplaylist").innerHTML += (` | Cancion en posicion ${i}: ${datosPlaylist[i]}`);
-		}
 	}
 });
 
