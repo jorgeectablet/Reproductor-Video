@@ -1,0 +1,111 @@
+body {
+  background-image: url(https://th.bing.com/th/id/R.588c7ab9d63a24cc1d1b9af84ef2bc2c?rik=f0Qt7RieTLLGPg&pid=ImgRaw&r=0);
+  background-size: contain;
+  font-family: sans-serif;
+  background-color: #f8f9fa;
+}
+
+.container {
+  padding: 25px;
+  text-align: center;
+}
+
+h3, p, label {
+  color: white;
+  font-weight: bold;
+}
+
+h3 {
+  color: #ffd900;
+  text-align: center;
+}
+
+.video-container {
+  text-align: center;
+  padding: 70px;
+  border-radius: 10px;
+}
+
+.error-message {
+  color: red;
+  font-weight: bold;
+}
+
+#video-player {
+  width: 60%;
+  height: 60%;
+  border: 10px solid white;
+  border-radius: 10px;
+  box-shadow: 0 0 10px black;
+}
+
+#eliminarCancion {
+  margin: 5px;
+}
+
+.playlist {
+  background-color: rgba(255, 255, 255, 0.5);
+  color: black;
+  font-weight: bold;
+  border-radius: 15px;
+}
+
+.btn {
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: #0069d9;
+}
+
+.btn-secondary:hover {
+  background-color: #5a6268;
+}
+
+.btn-success:hover {
+  background-color: #218838;
+}
+
+.btn-info:hover {
+  background-color: #138496;
+}
+
+.btn-warning:hover {
+  background-color: #e0a800;
+}
+
+.btn-danger:hover {
+  background-color: #c82333;
+}
+
+.btn-outline-light {
+  color: #f8f9fa;
+  border-color: #f8f9fa;
+}
+
+.btn-outline-light:hover {
+  background-color: #f8f9fa;
+  color: #007bff;
+}
+
+.playlist {
+  background-color: #f8f9fa;
+  border: 1px solid #dee2e6;
+  border-radius: 0.25rem;
+}
+
+.form-check-input:checked + .form-check-label::before {
+  background-color: #007bff;
+}
+
+#subtitles-container {
+  color: #28a745;
+}
+
+#subtitulos {
+  background-color: #076aff;
+}
+
+#subtitulos:hover {
+  background-color: #0013e0;
+}

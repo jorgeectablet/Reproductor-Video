@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link
+      rel="stylesheet"
+      href="https://use.fontawesome.com/releases/v5.8.2/css/all.css"
+      integrity="sha384-oS3vJWv+0UjzBfQzYUhtDYW+Pj2yciDJxpsK1OYPAYjqT085Qq/1cq5FLXAZQ7Ay"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" type="text/css" href="css/reproductor.css" />
+    <script src="js/reproductor.js" defer></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <h3>🎓 IES Hermenegildo Lanz 🎓</h3>
+      <br />
+      <div class="embed-responsive-16by9">
+        <video id="video-player" class="embed-responsive-item">
+          Your browser does not support HTML5 video.
+        </video>
+      </div>
+
+      <br />
+      <div class="btn-group">
+        <button id="previous-button" class="btn btn-warning" onclick="">
+          <i class="fas fa-backward"></i>
+        </button>
+        <button
+          class="btn btn-success"
+          id="up"
+          onclick="document.getElementById('video-player').volume += 0.1;"
+        >
+          <i class="fas fa-volume-up"></i>
+        </button>
+        <button id="start-button" class="btn btn-primary">
+          <i class="fas fa-play"></i>
+        </button>
+        <button
+          class="btn btn-danger"
+          id="down"
+          onclick="document.getElementById('video-player').volume -= 0.1;"
+        >
+          <i class="fas fa-volume-down"></i>
+        </button>
+        <button id="next-button" class="btn btn-warning" onclick="">
+          <i class="fas fa-forward"></i>
+        </button>
+      </div>
+      <br /><br />
+
+      <div id="subtitles-container"></div>
+
+      <div class="playlist p-2 m-2">
+        <ul id="itemplaylist" class="list-group">
+          <h4>🎶 Tracking 🎶</h4>
+          <li>
+          <button class="btn btn-primary m-2" id="reproducirPlaylist">
+            Reproducir
+          </button>
+          <button class="btn btn-primary m-2" id="eliminarPlaylist">
+            Eliminar
+          </button>
+          </li>
+        </ul>
+      </div>
+      <br />
+      <div class="form-group">
+        <input
+          type="file"
+          class="form-control-file"
+          id="video-files"
+          multiple
+        />
+      </div>
+
+      <div class="form-group form-check">
+        <input type="checkbox" class="form-check-input" id="randomCheckbox" />
+        <label class="form-check-label" for="randomCheckbox"
+          >Reproducir aleatoriamente</label
+        >
+      </div>
+      <button class="btn btn-primary m-2" id="subtitulos">
+        Activar/Desactivar subtitulos
+      </button>
+    </div>
+  </body>
+</html>
