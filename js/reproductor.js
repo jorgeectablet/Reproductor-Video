@@ -14,9 +14,6 @@ const random = document.getElementById("randomCheckbox"); // Boton reproducir al
 const botonsubtitulos = document.getElementById("subtitulos");
 const subtitlesContainer = document.getElementById('subtitles-container');
 
-const datosPlaylist = []; // Array playlist
-var contador = 0; // Contador
-var files; // Archivos de video
 
 
 startButton.addEventListener("click", () => { // SE EJECUTA AL DARLE AL PLAY
@@ -32,8 +29,6 @@ startButton.addEventListener("click", () => { // SE EJECUTA AL DARLE AL PLAY
 			console.log("Se han cargado en la playlist: "+files[i].name);
 		}
 
-		/* El método URL.createObjectURL() crea un string 
-		que contiene una URL que representa al objeto pasado como parámetro*/
 		videoPlayer.play();
 
 		videoPlayer.addEventListener("ended", () => { // SI HA TERMINADO DE REPRODUCIR
@@ -43,10 +38,6 @@ startButton.addEventListener("click", () => { // SE EJECUTA AL DARLE AL PLAY
 				videoPlayer.load();
 				videoPlayer.play();
 			}
-		});
-
-		videoPlayer.addEventListener("error", () => { // SI DA ERROR
-			errorMessage.innerHTML = "El fichero de video no existe";
 		});
 
 	} else {
@@ -124,30 +115,3 @@ random.addEventListener("click", () => {
 		videoPlayer.play();
 	}
 });
-
-/*
-function loadSubtitles() {
-	// Obtener el archivo de subtítulos
-	fetch('mi_subtitulo.vtt')
-		.then(response => response.text())
-		.then(data => {
-			// Crear un objeto Track para el elemento <video>
-			const track = document.createElement('track');
-			track.kind = 'subtitles';
-			track.label = 'Español';
-			track.srclang = 'es';
-			track.src = 'mi_subtitulo.vtt';
-			// Añadir el objeto Track al elemento <video>
-			video.appendChild(track);
-		});
-}
-
-toggleSubtitlesBtn.addEventListener('click', () => {
-	if (video.textTracks[0].mode === 'showing') {
-		video.textTracks[0].mode = 'hidden';
-	} else {
-		video.textTracks[0].mode = 'showing';
-	}
-});
-
-loadSubtitles();*/
